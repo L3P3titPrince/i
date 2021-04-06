@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="../index.html" class="title">Hyperspace</a>
+				<nav>
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../generic.html" class="active">Generic</a></li>
+						<li><a href="../elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Stevens </h1>	
+							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
+							<div style="text-align:center;">
+								<img class="img-rounded" src="../images/47_sdc_flowchart.svg" alt="Set up 1" style="width: 100%">	
+								<p class="btmspace-5 text-center" >Figure: Messange Sequence Kafka and Kinesis.</p> 
+							</div>
+							<h3>
+								1. Summary
+							</h3>
+							<p>
+								Stevens Data Cloud is a project combine hands-on data pipeline and course desgin. First part will use Citi-bike data to build a data pipline. 
+								Second part will guide you how to install different database and data tools on different platform. 
+							</p>
+							<hr>
+							<h3>
+								2.Kafka Pipeline
+							</h3>
+							<p>
+								This pipline is a multi input and multi output system. You can use different data source as your import. 
+								For the store and analysis part, you also have different options for differnt senario requirements. 
+								<ol>
+									<li>The most common data source is API, like this.<a href="https://gbfs.citibikenyc.com/gbfs/en/station_status.json">Citi-bikey API</a>.
+										This is JSON file refreahed every 5 minutes. We can use requests() library to scrapy this kind of data.
+									</li>
+									<li>In order to consider private and public environment, we select open source Kafka and private (AMS owned) Kinesis as our data stream</li>
+									<li>On default setting, Kafka is real-time message sequence but Kinesis is nealy real-time with 60 seconds buffer.</li>
+									<li>Transformed json to dictionary format with 'station_id' and 'time_stamp'</li>
+									<li>Called KafkaProducer on 9092 port and send data and signed 'station_id' as topic. </li>
+									<li>Different consumer will serve different destition database and different senario data type requirements. 
+										So each consumer will correspond to each scenario</li>
+									<li>Extract data from KafaConsumer with cassandra.cluster or mongoDB reader</li>
+								</ol>
+							</p>
+							<hr>
+							<h3>
+								3. Kinesis Firehouse Pipeline
+							</h3>
+							<p>
+								<ol>
+									<li>For Kinesis part, we use Kinesis-agent for python to drive pipline.</li>
+									<li>Restore the JSON into target floder and use python to convert into Kinesis readable data format, each package seperate with whitespace.</li>
+									<li>Create Kinesis Date Firehous stream on AWS and select desition on S3, Redshift or DocumentDB. </li>
+									<li>Configure Kineis-agent to recognize AWS Kinese firehouse servies in same VPC.</li>
+									<li>Default Kinsis stream will recive data from Kinesis-agent and upload to desition every 60 seconds.</li>
+								</ol>
+							</p>
+							<hr>
+							<h3>
+								4. 
+							</h3>
+							<div style="text-align:center;">
+								<img class="img-rounded" src="../images/43_spark_project.png" alt="Set up 1" style="width: 80">	
+								<p class="btmspace-5 text-center" >Figure: Microsfot Project Gantt.</p> 
+							</div>
+							<p>
+								<ol>
+									<li>We have two teams that responsible for weather impact and schedule optimeze seperatelty.</li>
+									<li></li>
+								</ol>
+							</p>
+							<hr>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

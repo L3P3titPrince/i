@@ -38,8 +38,57 @@
 								<img class="img-rounded" src="../images/42_flowchart.svg" alt="Set up 1" style="width: 100%">	
 								<p class="btmspace-5 text-center" >Figure: Flowchart.</p> 
 							</div>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h3>
+								Summary
+							</h3>
+							<p>
+								Sprak-Tek is a dryer company that processing raw material, like powder and starch. Sprak-Tek used dryers to extract moisture from raw material
+								and trid to get smallers particle. From the Flowchart, you can see two main data pipeline, the upper pipeline contains import and most of data
+								preprocessing. The lower pipline 
+							</p>
+							<hr>
+							<h3>
+								Data Analysis
+							</h3>
+							<p>
+								Our team need to find the weather impact to the dryer system. We got product data, New Jersey wetaher data, and Pennsylvania weather 
+								three datasets. By function model discriminate, we did the following pipline.
+								<ol>
+									<li>Import data from production data from engineering department and weather data from Openweather.org</li>
+									<li>Convert time columns from UNIX system and other timezone into uniform Eastern Stardard Time </li>
+									<li>During cleaning data process, we discard missing value which output from EDA process.</li>
+									<li>In order to do further statistical analysis, we need make sure that all the error data or outliers will be deducted. </li>
+									<li>For the abnormal detection model, we apply z-socre for Gaussian distribution and IQR outlier for non-Gaussian distribution</li>
+								</ol>
+							</p>
+							<hr>
+							<h3>
+								Machine Learning
+							</h3>
+							<p>
+								<ol>
+									<li>After preprocessing, we merge production data with weather data and we got multi-rows for each records sequenced by hours</li>
+									<li>If we look at our data into sequence, its more like time series datatype which got consequence after reading a series data point</li>
+									<li>So we use feature engineering to capture the characteristics of this time sequence data </li>
+									<li>Feature scaler train data with standardlization and label data with normalization, which we need restrict label between [0,1]</li>
+									<li>Using neural network got 75% classification result without significant overfitting</li>
+								</ol>
+							</p>
+							<hr>
+							<h3>
+								Project Management
+							</h3>
+							<div style="text-align:center;">
+								<img class="img-rounded" src="../images/43_spark_project.png" alt="Set up 1" style="width: 80">	
+								<p class="btmspace-5 text-center" >Figure: Microsfot Project Gantt.</p> 
+							</div>
+							<p>
+								<ol>
+									<li>We have two teams that responsible for weather impact and schedule optimeze seperatelty.</li>
+									<li></li>
+								</ol>
+							</p>
+							<hr>
 						</div>
 					</section>
 
